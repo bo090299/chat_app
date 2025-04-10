@@ -1,6 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:news_project/chat.dart';
+import 'package:news_project/password.dart';
+import 'package:news_project/themes/light_mode.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,12 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'chat app',
-      theme: ThemeData(
-     
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Chat app'),
+      theme: lightMode,
+      home:  Password_screen(),
     );
   }
 }
@@ -46,8 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("""Get Closer To
         Every One """),
       ),
-      body: Center(
-        
+      body: Center(    
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -102,6 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   backgroundColor: const Color.fromRGBO(119,31,152,1)
                 ),
                 onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Password_screen()));
               }, child: Text("Get Started",style: TextStyle(color: Colors.white),),
             )
           ],
